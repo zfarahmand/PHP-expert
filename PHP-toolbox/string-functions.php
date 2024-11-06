@@ -208,3 +208,92 @@ $fav_masterpiece , $artist , $year);
 // My favorite masterpiece is The fallen angel by Alexandre Cabanel. This is painted in 1847.
 
 echo "<hr>";
+
+//////////////////////// stripos() ///////////////////////
+
+echo stripos($variable3 , "name");
+
+// 7
+
+// Notice: case insensitive
+
+echo "<hr>";
+
+//////////////////////// strpos() ///////////////////////
+
+echo strpos($variable3 , "name");
+
+// 7
+
+// Notice: case sensitive
+
+echo "<hr>";
+
+//////////////////////// md5() ///////////////////////
+
+echo md5($variable1);
+
+// e8a8d57fa67fa9ca20981890d3f0a662
+
+echo "<hr>";
+
+//////////////////////// htmlentities() ///////////////////////
+
+$entity_string = "<script>alert('hacked!')</script>";
+
+// echo $entity_string; 
+// Shows alert!
+
+echo htmlentities($entity_string);
+
+// <script>alert('hacked!')</script>
+
+echo "<hr>";
+
+//////////////////////// html_entity_decode() ///////////////////////
+
+$entity_string = htmlentities($entity_string);
+
+
+// echo html_entity_decode($entity_string);
+
+// Shows alert!
+
+echo "<hr>";
+
+//////////////////////// htmlspecialchars() ///////////////////////
+
+$special_chars_string = "<script>alert('hacked!')</script>";
+
+// echo $special_chars_string; 
+// Shows alert!
+
+echo htmlspecialchars($special_chars_string);
+
+// <script>alert('hacked!')</script>
+
+echo "<hr>";
+
+//////////////////////// htmlspecialchars_decode() ///////////////////////
+
+$special_chars_string = htmlspecialchars($special_chars_string);
+
+
+// echo htmlspecialchars_decode($special_chars_string);
+
+// Shows alert!
+
+echo "<hr>";
+
+//////////////////////// strip_tags() ///////////////////////
+
+$special_chars_string = "<a href= 'http://site.com'>Malicious link</a>";
+
+echo $special_chars_string."<br>"; 
+// Shows The malicious link!
+
+echo strip_tags($special_chars_string);
+
+// Drops anchor tag or any other html tag!
+
+echo "<hr>";
