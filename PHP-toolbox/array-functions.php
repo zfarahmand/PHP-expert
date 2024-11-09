@@ -310,3 +310,71 @@ printResults(array_fill(1 , 5 , "Dreamer"));
     )
 */
 
+// This is a bitwise function which uses the AND operator to find if this is an odd binary value or not
+// Example: 5 = 101 , 1 = 001. 101 AND 001 = 001 = true
+// Example: 4 = 100 , 1 = 001. 100 AND 001 = 000 = false
+
+function findOddNumbers(int $value) : int {
+    return ($value & 1);
+}
+
+$numbers = [100 , 50 , 32 , 81 , 3 , 101 , 57 , 41 , 254];
+printResults(array_filter($numbers , "findOddNumbers"));
+
+/*
+    Array
+    (
+        [3] => 81
+        [4] => 3
+        [5] => 101
+        [6] => 57
+        [7] => 41
+    )
+*/
+
+$life1 = "یک خیابان دراز است که هر روز زنی با زنبیلی از آن می‌گذرد";
+$life2 = "ریسمانیست که مردی با آن خود را از شاخه می‌آویزد";
+$life3 = "طفلی‌ست که از مدرسه برمی‌گردد";
+$life4 = "افروختن سیگاری باشد در فاصله رخوتناک دو هم‌آغوشی";
+$life5 = "عبور رهگذری باشد که کلاه از سر بر می‌دارد و به یک رهگذر دیگر با لبخندی بی‌معنی می‌گوید «صبح بخیر»";
+
+$poet = compact("life1" , "life2" , "life3" , "life4" , "life5");
+printResults($poet);
+
+/*
+    Array
+    (
+        [life1] => یک خیابان دراز است که هر روز زنی با زنبیلی از آن می‌گذرد
+        [life2] => ریسمانیست که مردی با آن خود را از شاخه می‌آویزد
+        [life3] => طفلی‌ست که از مدرسه برمی‌گردد
+        [life4] => افروختن سیگاری باشد در فاصله رخوتناک دو هم‌آغوشی
+        [life5] => عبور رهگذری باشد که کلاه از سر بر می‌دارد و به یک رهگذر دیگر با لبخندی بی‌معنی می‌گوید «صبح بخیر»
+    )
+*/
+
+foreach($poet as $life)
+    echo "زندگی شاید " . $life . "<br>";
+
+/*
+    زندگی شاید یک خیابان دراز است که هر روز زنی با زنبیلی از آن می‌گذرد
+    زندگی شاید ریسمانیست که مردی با آن خود را از شاخه می‌آویزد
+    زندگی شاید طفلی‌ست که از مدرسه برمی‌گردد
+    زندگی شاید افروختن سیگاری باشد در فاصله رخوتناک دو هم‌آغوشی
+    زندگی شاید عبور رهگذری باشد که کلاه از سر بر می‌دارد و به یک رهگذر دیگر با لبخندی بی‌معنی می‌گوید «صبح بخیر»
+*/
+
+echo "<hr>";
+
+extract($arr_associated1);
+echo $firstName;
+
+// Zahra
+
+echo "<hr>";
+
+
+// implode($array)
+// explode($string)
+
+// this functions are introduced in string functions section
+
