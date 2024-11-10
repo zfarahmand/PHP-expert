@@ -98,3 +98,32 @@ echo "<hr>";
 
 $tomorrow_timestamp = strtotime("tomorrow");
 echo date("h:i:sa Y-m-d l" , $tomorrow_timestamp);
+
+// 12:00:00am 2024-11-11 Monday
+
+echo "<hr>";
+
+echo microtime();
+
+// Return current Unix timestamp with microseconds
+// 0.63446500 1731229911
+
+echo "<hr>";
+
+// Adding Gregorian to Jalali library
+include_once('../jdf.php');
+
+echo jdate('Y / n / j') . "<br>";
+// ۱۴۰۳ / آبان / ۲۰
+echo jdate('F') . " ماه سال " . jdate('V') . "<br>";
+// آبان
+var_dump(gregorian_to_jalali(date('Y') , date('m') , date('d')));
+// array(3) { [0]=> int(1403) [1]=> int(8) [2]=> int(20) }
+echo "<br>";
+echo gregorian_to_jalali(date('Y') , date('m') , date('d') , '/');
+// 1403/8/20
+
+echo "<hr>";
+
+include_once('../helpers/datetime.php');
+echo dateToJalali('2024-11-10 03:43 pm.');
