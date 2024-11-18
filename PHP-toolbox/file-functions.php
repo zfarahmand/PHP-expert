@@ -47,10 +47,40 @@ $opened_file = fopen($file_to_open , 'a+');
 //fwrite($opened_file , "my new string\n"); 
 // Notice: It creates a file if there isn't any
 
-for($i = 0 ; $i < 10 ; $i++) {
+for($i = 1 ; $i <= 10 ; $i++) {
     fwrite($opened_file , "$i- New log =>" . date("Y-m-d H:i:s" , time()) . PHP_EOL );
 }
 
 fclose($opened_file);
 
+$opened_file = fopen($file_to_open , 'r');
 
+// for($i = 0 ; $i < 10 ; $i++) {
+//     echo fgetc($opened_file);
+// }
+
+// echo "<hr>";
+
+//echo fgets($opened_file , 100);
+
+// Length: Optional. Specifies the number of bytes to read. Reading stops when length-1 
+// bytes have been reached, or when a new line occurs, or on EOF. If no length is specified, 
+// it reads until end of the line
+
+//echo "<hr>";
+
+for($i = 0 ; $i < 10 ; $i++) {
+    echo fgets($opened_file) . "<br>";
+}
+
+fclose($opened_file);
+
+echo "<hr>";
+
+$str = "A new text string to write in the file!" . PHP_EOL;
+
+file_put_contents($file_to_open , $str , FILE_APPEND);
+
+$str2 = file_get_contents($file_to_open);
+
+echo nl2br($str2);
